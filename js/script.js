@@ -41,7 +41,11 @@ const codigoPixFinal = document.getElementById("codigoPixFinal");
 const copiarCodigoPix = document.getElementById("copiarCodigoPix");
 const totalPixFinal = document.getElementById("totalPixFinal");
 const confirmarPedidoPix = document.getElementById("confirmarPedidoPix");
+const slidesWrapper = document.getElementById("slidesWrapper");
+const slideBtns = document.querySelectorAll(".slide-btn");
 
+let slideAtual = 0;
+let intervaloSlide;
 
 let pedidos = [];
 let meusPedidos = JSON.parse(localStorage.getItem("meusPedidosPizza")) || [];
@@ -83,10 +87,14 @@ botoesAdicionar.forEach((botao) => {
 
 abrirPedidos.addEventListener("click", () => {
   janelaPedidos.classList.add("ativo");
+
+  mostrarSlide(0);
+  iniciarSlidePagamento();
 });
 
 fecharPedidos.addEventListener("click", () => {
   janelaPedidos.classList.remove("ativo");
+  clearInterval(intervaloSlide);
 });
 
 janelaPedidos.addEventListener("click", (event) => {
@@ -217,6 +225,44 @@ function validarDadosPedido() {
 
   return true;
 }
+
+function mostrarSlide(index) {
+  slideAtual = index;
+
+  if (!slidesWrapper) return;
+
+  slidesWrapper.style.transform = `translateX(-${index * 100}%)`;
+
+  slideBtns.forEach((btn) => {
+    btn.classList.remove("ativo");
+  });
+
+  if (slideBtns[index]) {
+    slideBtns[index].classList.add("ativo");
+  }
+}
+
+function iniciarSlidePagamento() {
+  clearInterval(intervaloSlide);
+
+  intervaloSlide = setInterval(() => {
+    slideAtual++;
+
+    if (slideAtual >= slideBtns.length) {
+      slideAtual = 0;
+    }
+
+    mostrarSlide(slideAtual);
+  }, 3500);
+}
+
+slideBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const index = Number(btn.dataset.slide);
+    mostrarSlide(index);
+    iniciarSlidePagamento();
+  });
+});
 
 function abrirModalPixFinal() {
   const codigoPix = gerarCodigoPixSimulado();
