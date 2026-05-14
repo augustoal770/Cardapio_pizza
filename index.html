@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza's Cheddar | Cardápio Online</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topo">
+    <nav class="navbar">
+      <div class="marca">
+        <img src="assets/logo.svg" alt="Logo Pizza's Cheddar" class="logo" />
+
+        <div>
+          <h1>Pizza's Cheddar</h1>
+          <p>Cardápio artesanal com sabor de verdade</p>
+        </div>
+      </div>
+
+      <div class="nav-acoes">
+  <a href="#cardapio" class="btn-topo">Ver cardápio</a>
+
+  <button class="btn-pedidos" id="abrirPedidos">
+    Pedidos
+    <span id="contadorPedidos">0</span>
+  </button>
+</div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-texto">
+        <span class="etiqueta">Aberto hoje • Entrega rápida</span>
+
+        <h2>O melhor sabor da cidade em cada fatia.</h2>
+
+        <p>
+          Pizzas tradicionais, premium e doces preparadas com massa especial,
+          cheddar cremoso e ingredientes selecionados.
+        </p>
+
+        <div class="hero-acoes">
+          <a href="#cardapio" class="btn-principal">Escolher pizza</a>
+          <a href="#rodape" class="btn-secundario">Contato</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+  <img
+    src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza destaque"
+  />
+
+  <div class="preco-destaque">
+    <span>A partir de</span>
+    <strong>R$ 29,90</strong>
+  </div>
+</div>
+
+    </section>
+  </header>
+
+  <main>
+    <section class="paleta">
+      <h2>Paleta visual da pizzaria</h2>
+      <p>
+        Cores quentes inspiradas em forno, cheddar, massa artesanal e molho de tomate.
+      </p>
+
+      <div class="cores">
+        <div class="cor">
+          <span style="background:#2A0E06"></span>
+          <p>Marrom forno</p>
+        </div>
+
+        <div class="cor">
+          <span style="background:#FF6B1A"></span>
+          <p>Laranja pizza</p>
+        </div>
+
+        <div class="cor">
+          <span style="background:#F7B733"></span>
+          <p>Cheddar</p>
+        </div>
+
+        <div class="cor">
+          <span style="background:#B11226"></span>
+          <p>Molho tomate</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cardapio" id="cardapio">
+      <div class="titulo-area">
+        <span>Nosso cardápio</span>
+        <h2>Escolha sua pizza favorita</h2>
+      </div>
+
+      <div class="filtros">
+  <button class="filtro ativo" data-categoria="todos">Todos</button>
+  <button class="filtro" data-categoria="tradicional">Pizzas tradicionais</button>
+  <button class="filtro" data-categoria="premium">Pizzas premium</button>
+  <button class="filtro" data-categoria="doce">Pizzas doces</button>
+  <button class="filtro" data-categoria="bebida">Bebidas</button>
+</div>
+
+      <div class="grid-pizzas" id="lista-pizzas">
+
+        <article class="pizza-card" data-categoria="tradicional">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Calabresa Cheddar"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag">Tradicional</span>
+    <h3>Calabresa Cheddar</h3>
+    <p>Calabresa, cebola, mussarela, molho especial e cheddar cremoso.</p>
+
+    <div class="card-final">
+      <strong>R$ 34,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="tradicional">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Frango com Catupiry"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag">Tradicional</span>
+    <h3>Frango com Catupiry</h3>
+    <p>Frango temperado, catupiry, mussarela, orégano e molho da casa.</p>
+
+    <div class="card-final">
+      <strong>R$ 36,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="tradicional">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Marguerita"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag">Tradicional</span>
+    <h3>Marguerita</h3>
+    <p>Mussarela, tomate fresco, manjericão, parmesão e molho artesanal.</p>
+
+    <div class="card-final">
+      <strong>R$ 32,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="premium">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Cheddar Supreme"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag premium">Premium</span>
+    <h3>Cheddar Supreme</h3>
+    <p>Carne desfiada, bacon crocante, cheddar premium e cebola caramelizada.</p>
+
+    <div class="card-final">
+      <strong>R$ 49,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="premium">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Bacon Barbecue"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag premium">Premium</span>
+    <h3>Bacon Barbecue</h3>
+    <p>Bacon, mussarela, molho barbecue, cheddar, tomate e toque defumado.</p>
+
+    <div class="card-final">
+      <strong>R$ 47,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="premium">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1511689660979-10d2b1aada49?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Nordestina Especial"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag premium">Premium</span>
+    <h3>Nordestina Especial</h3>
+    <p>Carne de sol, queijo coalho, cebola roxa, mussarela e cheddar.</p>
+
+    <div class="card-final">
+      <strong>R$ 52,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="doce">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Chocolate Cremoso"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag doce">Doce</span>
+    <h3>Chocolate Cremoso</h3>
+    <p>Chocolate ao leite, creme especial, granulado e borda açucarada.</p>
+
+    <div class="card-final">
+      <strong>R$ 38,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="doce">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Banana com Canela"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag doce">Doce</span>
+    <h3>Banana com Canela</h3>
+    <p>Banana, leite condensado, canela, açúcar e massa levemente crocante.</p>
+
+    <div class="card-final">
+      <strong>R$ 35,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="doce">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=1200&q=80"
+    alt="Pizza Morango com Nutella"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag doce">Doce</span>
+    <h3>Morango com Nutella</h3>
+    <p>Creme de avelã, morangos frescos, chocolate e finalização especial.</p>
+
+    <div class="card-final">
+      <strong>R$ 44,90</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="bebida">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=1200&q=80"
+    alt="Coca-Cola 2L"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag bebida">Bebida</span>
+    <h3>Coca-Cola 2L</h3>
+    <p>Refrigerante Coca-Cola gelado, ideal para acompanhar sua pizza.</p>
+
+    <div class="card-final">
+      <strong>R$ 12,00</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="bebida">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80"
+    alt="Suco Natural"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag bebida">Bebida</span>
+    <h3>Suco Natural</h3>
+    <p>Suco natural gelado nos sabores laranja, acerola ou maracujá.</p>
+
+    <div class="card-final">
+      <strong>R$ 8,00</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+<article class="pizza-card" data-categoria="bebida">
+  <img
+    class="pizza-foto"
+    src="https://images.unsplash.com/photo-1564419320408-38e24e038739?auto=format&fit=crop&w=1200&q=80"
+    alt="Água Mineral"
+  />
+  <div class="pizza-conteudo">
+    <span class="tag bebida">Bebida</span>
+    <h3>Água Mineral</h3>
+    <p>Água mineral sem gás, leve e refrescante.</p>
+
+    <div class="card-final">
+      <strong>R$ 4,00</strong>
+      <button>Adicionar</button>
+    </div>
+  </div>
+</article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="rodape">
+    <div class="rodape-conteudo">
+      <div>
+        <h2>Pizza's Cheddar</h2>
+        <p>Sabor, qualidade e atendimento especial para você.</p>
+      </div>
+
+      <div class="rodape-info">
+        <p><strong>Empresa:</strong> Pizza's Cheddar</p>
+        <p><strong>Número:</strong> 81 9487-5455</p>
+        <p><strong>Desenvolvedor:</strong> Aust Devs &CIA</p>
+        <p><strong>Número:</strong> 81 9999-9999</p>
+      </div>
+    </div>
+
+    <p class="copy">© 2026 Pizza's Cheddar. Todos os direitos reservados.</p>
+  </footer>
+
+  <div class="janela-pedidos" id="janelaPedidos">
+  <div class="pedidos-box">
+    <div class="pedidos-topo">
+      <div>
+        <span>Atendimento</span>
+        <h2>Pedidos</h2>
+      </div>
+
+      <button class="fechar-pedidos" id="fecharPedidos">×</button>
+    </div>
+
+    <div class="abas-pedidos">
+      <button class="aba-btn ativo" id="abaCarrinhoBtn">Carrinho</button>
+      <button class="aba-btn" id="abaMeusPedidosBtn">Meus pedidos</button>
+    </div>
+
+    <section class="aba-conteudo ativo" id="abaCarrinho">
+      <div class="lista-pedidos" id="listaPedidos">
+        <p class="pedido-vazio">Nenhum item adicionado ainda.</p>
+      </div>
+
+      <div class="pedidos-final">
+        <div class="total-pedidos">
+          <span>Total</span>
+          <strong id="totalPedidos">R$ 0,00</strong>
+        </div>
+
+        <div class="pedidos-botoes">
+          <button class="limpar-pedido" id="limparPedido">Limpar</button>
+          <button class="finalizar-pedido" id="abrirCheckout">Finalizar pedido</button>
+        </div>
+      </div>
+
+      <div class="checkout-area" id="checkoutArea">
+        <h3>Conferência do pedido</h3>
+        <p class="checkout-texto">
+          Escolha a forma de pagamento e informe os dados para envio.
+        </p>
+
+        <div class="campo">
+          <label>Forma de pagamento</label>
+
+          <div class="opcoes-pagamento">
+            <label>
+              <input type="radio" name="pagamento" value="pix" checked />
+              Pix
+            </label>
+
+            <label>
+              <input type="radio" name="pagamento" value="dinheiro" />
+              Dinheiro
+            </label>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label>Tipo do pedido</label>
+
+          <div class="opcoes-pagamento">
+            <label>
+              <input type="radio" name="tipoEntrega" value="entrega" checked />
+              Entrega
+            </label>
+
+            <label>
+              <input type="radio" name="tipoEntrega" value="retirada" />
+              Retirada
+            </label>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="nomeCliente">Nome do cliente</label>
+          <input type="text" id="nomeCliente" placeholder="Ex: Augusto Lima" />
+        </div>
+
+        <div class="campo campo-endereco" id="campoEndereco">
+          <label for="enderecoCliente">Endereço para entrega</label>
+          <textarea
+            id="enderecoCliente"
+            placeholder="Rua, número, bairro, referência..."
+          ></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="observacaoPedido">Observação</label>
+          <textarea
+            id="observacaoPedido"
+            placeholder="Ex: sem cebola, borda recheada, entregar no portão..."
+          ></textarea>
+        </div>
+
+        <div class="area-pix" id="areaPix">
+          <h4>Pagamento via Pix</h4>
+
+          <div class="pix-box">
+            <img id="qrCodePix" alt="QR Code Pix" />
+
+            <div>
+              <p>
+                Escaneie o QR Code ou copie a chave Pix abaixo para pagamento.
+              </p>
+
+              <label>Chave Pix</label>
+              <input type="text" id="chavePix" value="8194875455" readonly />
+
+              <button class="copiar-pix" id="copiarPix">Copiar chave Pix</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="area-dinheiro escondido" id="areaDinheiro">
+          <h4>Pagamento em dinheiro</h4>
+
+          <div class="campo">
+            <label for="trocoPara">Troco para quanto?</label>
+            <input type="text" id="trocoPara" placeholder="Ex: R$ 100,00 ou sem troco" />
+          </div>
+        </div>
+
+        <button class="enviar-conferencia" id="finalizarPedidoCheckout">
+  Finalizar pedido
+    </button>
+      </div>
+    </section>
+
+    <section class="aba-conteudo" id="abaMeusPedidos">
+      <div class="meus-pedidos-lista" id="listaMeusPedidos">
+        <p class="pedido-vazio">Você ainda não enviou nenhum pedido.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+    <div class="modal-pix" id="modalPix">
+  <div class="modal-pix-box">
+    <div class="modal-pix-topo">
+      <div>
+        <span>Pagamento Pix</span>
+        <h2>Finalize seu pagamento</h2>
+      </div>
+
+      <button id="fecharModalPix">×</button>
+    </div>
+
+    <div class="modal-pix-conteudo">
+      <img id="qrCodePixFinal" alt="QR Code Pix" />
+
+      <div class="codigo-pix-area">
+        <label for="codigoPixFinal">Código Pix copia e cola</label>
+
+        <textarea id="codigoPixFinal" readonly></textarea>
+
+        <button id="copiarCodigoPix" class="copiar-codigo-pix">
+          Copiar código Pix
+        </button>
+      </div>
+
+      <div class="resumo-pix-final">
+        <p><strong>Total:</strong> <span id="totalPixFinal">R$ 0,00</span></p>
+        <p><strong>Status:</strong> Aguardando pagamento</p>
+      </div>
+
+      <button id="confirmarPedidoPix" class="confirmar-pedido-pix">
+        Confirmar e enviar para conferência
+      </button>
+    </div>
+  </div>
+</div>
+
+  <div class="toast" id="toast">Item adicionado ao pedido!</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
